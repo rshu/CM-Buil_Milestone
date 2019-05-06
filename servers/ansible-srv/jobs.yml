@@ -1,0 +1,8 @@
+---
+  - hosts: all
+    tasks:
+    - name: update jobs
+      become: yes
+      register: update_jobs
+      shell: /home/vagrant/.local/bin/jenkins-jobs update /home/vagrant/jobs
+      failed_when: update_jobs.rc != 1 and update_jobs.rc != 0

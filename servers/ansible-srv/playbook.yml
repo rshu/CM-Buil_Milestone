@@ -1,0 +1,31 @@
+---
+- hosts: all
+  vars:
+    admin_user_name: jenkins
+    admin_user_pass: admin
+    mysql_password: root
+    jenkins_plugins:
+      - ant
+      - gradle
+      - build-timeout
+      - email-ext
+      - github-branch-source
+      - ldap
+      - matrix-auth
+      - nodejs
+      - antisamy-markup-formatter
+      - pam-auth
+      - workflow-aggregator
+      - pipeline-github-lib
+      - ssh-slaves
+      - subversion
+      - timestamper
+      - ws-cleanup
+      - job-dsl
+
+  roles:
+    - jenkins
+    - install
+    - jobs
+  
+  

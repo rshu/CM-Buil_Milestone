@@ -1,0 +1,4 @@
+#!/bin/sh
+GIT_WORK_TREE=/home/vagrant/deploy/production-jenkins/ git checkout -f
+echo "Pushed to production!"
+ansible-playbook /ansible-srv/jobs.yml -i /ansible-srv/inventory
